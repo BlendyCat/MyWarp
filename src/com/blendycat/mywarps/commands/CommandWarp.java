@@ -25,7 +25,8 @@ public class CommandWarp implements CommandExecutor {
 					player.teleport((Location) fig.get(args[0]));
 					player.sendMessage(ChatColor.GOLD+"Welcome to \'"+args[0].toLowerCase()+"\'!");
 				}
-			}else sender.sendMessage("Error: this command must be sent from a player!");; 
+			}else sender.sendMessage("Error: this command must be sent from a player!");
+			return true;
 		}
 		return false;
 	}
