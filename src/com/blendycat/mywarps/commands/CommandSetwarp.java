@@ -24,6 +24,7 @@ public class CommandSetwarp implements CommandExecutor{
 				if(args.length==1){
 					Location pos = player.getLocation();
 					fig.set(args[0].toLowerCase(), (Object) pos);
+					player.sendMessage(ChatColor.GOLD+"Warp \'" + args[0] + "\' set!");
 				}else player.sendMessage(ChatColor.RED+"Invalid arguments!");
 			}else sender.sendMessage("Error: this command must be sent from a player!");
 			return true;

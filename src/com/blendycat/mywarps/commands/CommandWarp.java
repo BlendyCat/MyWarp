@@ -1,5 +1,6 @@
 package com.blendycat.mywarps.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -22,6 +23,7 @@ public class CommandWarp implements CommandExecutor {
 				Player player = (Player) sender;
 				if(args.length==1){
 					player.teleport((Location) fig.get(args[0]));
+					player.sendMessage(ChatColor.GOLD+"Welcome to \'"+args[0].toLowerCase()+"\'!");
 				}
 			}else sender.sendMessage("Error: this command must be sent from a player!");; 
 		}
