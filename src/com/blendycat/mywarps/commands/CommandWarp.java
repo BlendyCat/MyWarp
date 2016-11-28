@@ -1,5 +1,6 @@
 package com.blendycat.mywarps.commands;
 
+import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -15,10 +16,13 @@ public class CommandWarp implements CommandExecutor {
 	}
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command command, String label, String[] arg3) {
+	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 		if(command.getName().equalsIgnoreCase("warp")){
 			if(sender instanceof Player){
-				
+				Player player = (Player) sender;
+				if(args.length==1){
+					player.teleport((Location) fig.get(args[0]));
+				}
 			}else sender.sendMessage("Error: this command must be sent from a player!");; 
 		}
 		return false;
