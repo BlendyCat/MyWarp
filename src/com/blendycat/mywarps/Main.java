@@ -1,7 +1,6 @@
 package com.blendycat.mywarps;
 
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.blendycat.mywarps.commands.CommandSetwarp;
@@ -16,8 +15,8 @@ public class Main extends JavaPlugin{
 		cfg = getConfig();
 		cfg.addDefault("Version", 1.0);
 		cfg.options().copyDefaults(true);
-		getCommand("setwarp").setExecutor(new CommandSetwarp((Plugin) this));
-		getCommand("warp").setExecutor(new CommandWarp((Plugin) this));
+		getCommand("setwarp").setExecutor(new CommandSetwarp(this));
+		getCommand("warp").setExecutor(new CommandWarp(this));
 	}
 	
 	@Override

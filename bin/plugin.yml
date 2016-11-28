@@ -1,3 +1,10 @@
 name: MyWarps
 main: com.blendycat.mywarps.Main
 version: 1.0
+commands:
+  setwarp:
+    description: Used to set warp to players position
+    usage: /<command> <name>
+  warp:
+    description: Used to warp
+    usage: /<command> <name>
