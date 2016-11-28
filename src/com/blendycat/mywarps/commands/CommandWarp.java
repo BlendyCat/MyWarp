@@ -22,9 +22,11 @@ public class CommandWarp implements CommandExecutor {
 			if(sender instanceof Player){
 				Player player = (Player) sender;
 				if(args.length==1){
-					player.teleport((Location) fig.get(args[0]));
-					player.sendMessage(ChatColor.GOLD+"Welcome to \'"+args[0].toLowerCase()+"\'!");
-				}
+					if(fig.contains(args[0].toLowerCase())){
+						player.teleport((Location) fig.get(args[0].toLowerCase()));
+						player.sendMessage(ChatColor.GOLD+"Welcome to \'"+args[0].toLowerCase()+"\'!");
+					}
+				}else player.sendMessage(ChatColor.RED+"Invalid Arguments!");
 			}else sender.sendMessage("Error: this command must be sent from a player!");
 			return true;
 		}
